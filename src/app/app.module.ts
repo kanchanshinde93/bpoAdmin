@@ -17,17 +17,16 @@ import { coreConfig } from 'app/app-config';
 
 import { AppComponent } from 'app/app.component';
 import { LayoutModule } from 'app/layout/layout.module';
-import { SampleModule } from 'app/main/sample/sample.module';
+
 
 const appRoutes: Routes = [
-  {
-    path: 'pages',
-    loadChildren: () => import('./main/pages/pages.module').then(m => m.PagesModule)
-  },
+  /*  {
+     path: 'pages',
+     loadChildren: () => import('./main/pages/pages.module').then(m => m.PagesModule)
+   }, */
   {
     path: '',
-    redirectTo: '/home',
-    pathMatch: 'full'
+    loadChildren: () => import('./main/dashboard/dashboard.module').then(m => m.DashboardModule)
   },
   {
     path: '**',
@@ -59,9 +58,9 @@ const appRoutes: Routes = [
 
     // App modules
     LayoutModule,
-    SampleModule
+
   ],
 
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

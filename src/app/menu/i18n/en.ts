@@ -3,7 +3,9 @@ export const locale = {
   data: {
     MENU: {
       HOME: 'Home',
-      SAMPLE: 'Sample'
+      USER: 'User',
+      CAMPAIGN: 'CAMPAIGN',
+      CALL: 'Call'
     }
   }
 }
